@@ -1,0 +1,213 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: #ccc;
+}
+
+#main-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* ---------- Tab links and content container ---------- */
+
+.tablinks-container {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.tablinks-container button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.tablinks-container button:hover {
+  background-color: #ddd;
+}
+
+.tablinks-container button.active {
+  background-color: darkslategray;
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+}
+
+/* ---------- Dates tab ---------- */
+
+#tabcontent-1 fieldset {
+  border: 1px solid darkslategrey;
+}
+
+.date-inputs-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.date-input-wrap {
+  flex: 1;
+  margin: 10px 0;
+}
+
+.date-input-wrap input,
+.date-input-wrap select {
+  font-family: inherit;
+  width: 200px;
+  height: 24px;
+}
+
+.date-options-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.date-options-container fieldset {
+  flex: 1;
+}
+
+.date-options-container fieldset input {
+  margin: 5px 0;
+}
+
+.date-options-container fieldset label {
+  position: relative;
+  top: -2px;
+  left: 5px;
+}
+
+.end-date-helper-link {
+  display: block;
+  font-size: 12px;
+  color: seagreen;
+  margin-left: 65px;
+  margin-top: 5px;
+}
+
+#dates-result {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0 40px;
+  margin: 20px auto;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.dates-history {
+  margin-top: 40px;
+}
+
+#dates-history-toggler {
+  position: relative;
+  padding: 10px;
+  background: darkslategray;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+#dates-history-toggler::after {
+  content: "▾";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -10px;
+  transition: all 0.3s;
+  color: white;
+}
+
+#dates-history-toggler.active::after {
+  transform: rotate(180deg);
+  margin-top: -8px;
+}
+
+.dates-history-content-height {
+  height: 0;
+}
+
+.dates-history-content {
+  overflow: hidden;
+  border-top: 1px solid lightgray;
+}
+
+.dates-history-content.visible {
+  height: auto;
+}
+
+.dates-history-content table {
+  width: 100%;
+}
+
+.dates-history-content thead td {
+  background: darkslategray;
+  padding: 5px 10px;
+  color: white;
+}
+
+.dates-history-content tbody td {
+  padding: 5px 10px;
+  width: 33%;
+}
+
+.dates-history-content tbody tr:nth-child(even) {
+  background: lightgray;
+}
+
+#show-holidays-btn {
+  background: darkslategray;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#show-holidays-btn:disabled {
+  background: darkgray;
+}
+
+#sort-table-btn {
+  position: relative;
+}
+
+#sort-table-btn:hover::after {
+  content: "▾";
+  position: absolute;
+  left: 15%;
+  top: 5px;
+  transition: all 0.3s;
+  color: white;
+}
+
+#sort-table-btn.ascending::after {
+  transform: rotate(180deg);
+  margin-top: 3px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media screen and (max-width: 500px) {
+  .date-inputs-container {
+    flex-direction: column;
+  }
+
+  .date-options-container {
+    flex-direction: column;
+  }
+}

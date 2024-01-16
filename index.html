@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <!-- Tab links -->
+
+      <div class="tablinks-container">
+        <button class="tablink" id="tablink-1" onclick="openTab(1)">
+          Date difference
+        </button>
+        <button class="tablink" id="tablink-2" onclick="openTab(2)">
+          Holidays
+        </button>
+      </div>
+
+      <!-- Dates tab -->
+
+      <div id="tabcontent-1" class="tabcontent">
+        <div class="date-inputs-container">
+          <div class="date-input-wrap">
+            <label for="start-date">Start date:</label>
+            <input type="date" id="start-date" />
+          </div>
+          <div class="date-input-wrap">
+            <label for="end-date">End date:</label>
+            <input type="date" id="end-date" disabled />
+            <a href="#" id="end-date-helper-week" class="end-date-helper-link"
+              >a week from start date</a
+            >
+            <a href="#" id="end-date-helper-month" class="end-date-helper-link"
+              >a month from start date</a
+            >
+          </div>
+        </div>
+
+        <div class="date-options-container">
+          <fieldset id="days-of-week-options">
+            <legend>Including days:</legend>
+          </fieldset>
+
+          <fieldset id="diff-unit-options">
+            <legend>Output units:</legend>
+          </fieldset>
+        </div>
+
+        <div id="dates-result">Result: <span>—</span></div>
+
+        <div id="dates-history" class="dates-history">
+          <div id="dates-history-toggler">History</div>
+          <div
+            class="dates-history-content dates-history-content-height"
+            id="dates-history-content"
+          >
+            <table cellspacing="0">
+              <thead>
+                <tr>
+                  <td>Start date</td>
+                  <td>End date</td>
+                  <td>Result</td>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Holidays tab -->
+
+      <div id="tabcontent-2" class="tabcontent">
+        <div class="date-inputs-container">
+          <div class="date-input-wrap">
+            <label for="country-selection">Country</label>
+            <select id="country-selection" placeholder="Please select country">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="date-input-wrap">
+            <label for="year-selection">Year</label>
+            <select
+              id="year-selection"
+              placeholder="Please select year"
+              disabled
+            ></select>
+          </div>
+        </div>
+        <button id="show-holidays-btn" disabled>Show holidays</button>
+        <div class="dates-history" id="holidays">
+          <div class="dates-history-content" id="holidays-content">
+            <table id="holidays-table" cellspacing="0">
+              <thead>
+                <tr>
+                  <td id="sort-table-btn">Date</td>
+                  <td>Holiday</td>
+                </tr>
+              </thead>
+              <tbody id=""></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/dates.js"></script>
+    <script src="js/holidays.js"></script>
+  </body>
+</html>
